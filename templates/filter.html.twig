@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}books{% endblock %}
+
+{% block body %}
+
+  <!--START BOOKSPAGE-BACKGROUND SECTION-->
+    <div class="bookspage-background pages-background">
+      <h1>Our Books</h1>
+    </div>
+    <!--END BOOKSPAGE-BACKGROUND SECTION-->
+    <!-- Start Tool Box SECTION -->
+        <div class="option-box">
+            <div class="color-option">
+                <h2>Color Selector</h2>
+                <ul class="list-unstyled">
+                      <li data-value="{{ asset('assets/css/default_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/emerald_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/turquoise_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/sunflower_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/orange_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/carrot_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/alizarin_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/concrete_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/amethyst_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/wetasphalt_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/sienna_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/hotpink_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/darkgoldenrod_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/lightskyblue_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/black_theme.css')}}"></li>
+                </ul>
+            </div>
+            <i class="fa fa-gear fa-2x gear-check"></i>
+        </div>
+        <!-- End Tool Box Section -->
+    <!--START BOOKSPAGE-CONTENT Section -->
+    <div class="bookspage-content wrapper">
+      
+      <div class="container">
+        <div class="bookspage-body">
+          <div class="bookspage-content-head">
+            <h2 class="main-color">Our Books</h2>
+            <span class="first-line"></span>
+          </div>
+          <div class="parts books-list">
+            
+            
+            <div class="row">
+             {%for book in books %}
+              <!--START BOOK PART -->
+              <div class="book-part col-xs-12 col-sm-6 col-md-3">
+                <div class="book-cart">
+                 <a href="{{ path('book',{'id':book.id})}}"> <img src="{{ asset('img/books/' ~ book.image)  }}" alt="Dictionary"></a>
+                  <!--<div class="icons">
+                    <a><i class="fa fa-shopping-cart" aria-hidden="true"></i></a><a><i class="fa fa-star" aria-hidden="true"></i></a><a><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                  </div>  -->
+                  <div class="divy">
+                              <div class="book-desc">
+                                <center><a  class="head head-blacky">{{book.name}}</a></center>
+                                <span class="line-blacky"></span>
+                                <div class="book-tags book-tag-blacky">Author: 
+                                  <a href="#" class="book-tag book-tag-blacky">{{book.auteur.name}}</a>.
+                                </div>
+                                <div class="book-tags book-tag-blacky">Format: 
+                                  <a href="#" class="book-tag book-tag-blacky">PDF</a>.
+                                </div>
+                                <div class="book-tags book-tag-blacky">Categories: 
+                                  <a href="#" class="book-tag book-tag-blacky">{{book.categorie.name}}</a>
+                                </div>
+                              </div>
+                              <span class="line-blacky"></span>
+                    <a href="book.html" class="book-price main-color">Price:
+                      <span class="price-number-after">10$</span>
+                    </a>
+                            </div>
+                </div>
+              </div>
+                   {%endfor%}  
+              <!--END BOOK PART -->
+            </div>
+          </div>
+         
+        </div>
+      </div>
+ 
+    </div>
+    <!--END BOOKSPAGE-CONTENT Section -->
+   
+
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}
