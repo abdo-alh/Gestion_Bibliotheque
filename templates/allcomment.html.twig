@@ -1,0 +1,57 @@
+
+
+
+
+
+        {% extends 'base.html.twig' %}
+
+{% block title %}All Comment of User{% endblock %}
+
+{% block body %}
+
+
+
+
+ {%for commentaire in commentaires %}
+ {%if commentaire.user.id==app.user.id%}
+   <div class="person-comment">
+                   
+                    <div class="comment-pic">
+                      <a>
+                        <img style="width: 60px;height: 60px;" src="{{ asset('img/users/' ~ commentaire.user.image)  }}">
+                      </a>
+                    </div>
+                    <div class="comment-body">
+                      <h4 class="comment-writer">
+                        <a>{{commentaire.user.username}}</a>
+                      </h4>
+                  
+                      <pr style="color:gray">{{commentaire.description |raw}}</pr>
+                      <div class="comment-info">
+                        <a class="comment-time post-capitalize"> {{commentaire.createdAt | date('d/m/y a H:i')}}</a>
+                        <br>
+                      
+                      </div>
+                    </div>
+                
+                  </div><hr style="border-color: red">
+
+
+
+
+
+    <!--START BOOK-CONTENT SECTION-->
+    
+
+ {%endif%}
+
+ {%endfor%}
+
+
+ {% endblock %}
+
+{% block javascripts %}
+
+
+
+{% endblock %}

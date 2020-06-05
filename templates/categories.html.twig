@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+
+
+  <!--START CATEGORIES-PAGE-BACKGROUND SECTION -->
+    <div style="background: url('img/template/categorie.jpg');background-size: cover;" class="categories-page-background pages-background">
+      <h1>Categories</h1>
+    </div>
+    <!--END CATEGORIES-PAGE-BACKGROUND SECTION -->
+    <!-- Start Tool Box SECTION -->
+        <div class="option-box">
+            <div class="color-option">
+                <h2>Color Selector</h2>
+                <ul class="list-unstyled">
+                       <li data-value="{{ asset('assets/css/default_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/emerald_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/turquoise_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/sunflower_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/orange_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/carrot_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/alizarin_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/concrete_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/amethyst_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/wetasphalt_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/sienna_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/hotpink_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/darkgoldenrod_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/lightskyblue_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/black_theme.css')}}"></li>
+                </ul>
+            </div>
+            <i class="fa fa-gear fa-2x gear-check"></i>
+        </div>
+        <!-- End Tool Box SECTION -->
+    <!--START CATEGORIES-PAGE-CONTENT SECTION -->
+    <div class="categories-page-content parts wrapper">
+      <div class="container">
+        <div class="categories-page-content-head">
+          <h2 class="main-color">Our Categories</h2>
+          <span class="first-line"></span>
+        </div>
+       
+        <div class="row">
+          {%for categorie in categories %}
+          <!--START CATEGORY PART -->
+          <div class="category-part col-xs-12 col-sm-6 col-md-3">
+            <div class="category-cart">
+              <img src="{{ asset('img/categories/' ~ categorie.image)  }}" alt="Cars">
+              <div class="category-divy">
+                          <span class="line-blacky"></span>
+                          <div class="category-desc">
+                              <a href="{{path('filter_pagecat',{'id':categorie.id})}}" class="category-head head-blacky">{{categorie.name}}</a>
+                          </div>
+                      </div>
+            </div>
+          </div>
+            {%endfor%}  
+          <!--END CATEGORY PART -->
+        </div>
+
+      </div>
+    </div>
+    <!--END CATEGORIES-PAGE-CONTENT SECTION --> 
+   
+
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}
