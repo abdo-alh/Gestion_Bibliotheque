@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Authors{% endblock %}
+
+{% block body %}
+
+<!--START AUTHORS-PAGE-BACKGROUND SECTION -->
+		<div style="background: url('img/template/auteur.jpg');background-size: cover;" class="authors-page-background pages-background">
+			<h1>Authors</h1>
+		</div>
+		<!--END AUTHORS-PAGE-BACKGROUND SECTION -->
+		<!-- Start Tool Box SECTION -->
+        <div class="option-box">
+            <div class="color-option">
+                <h2>Color Selector</h2>
+                <ul class="list-unstyled">
+                    <li data-value="assets/css/default_theme.css"></li>
+                    <li data-value="assets/css/emerald_theme.css"></li>
+                    <li data-value="assets/css/turquoise_theme.css"></li>
+                    <li data-value="assets/css/sunflower_theme.css"></li>
+                    <li data-value="assets/css/orange_theme.css"></li>
+                    <li data-value="assets/css/carrot_theme.css"></li>
+                    <li data-value="assets/css/alizarin_theme.css"></li>
+                    <li data-value="assets/css/concrete_theme.css"></li>
+                    <li data-value="assets/css/amethyst_theme.css"></li>
+                    <li data-value="assets/css/wetasphalt_theme.css"></li>
+                    <li data-value="assets/css/sienna_theme.css"></li>
+                    <li data-value="assets/css/hotpink_theme.css"></li>
+                    <li data-value="assets/css/darkgoldenrod_theme.css"></li>
+                    <li data-value="assets/css/lightskyblue_theme.css"></li>
+                    <li data-value="assets/css/black_theme.css"></li>
+                </ul>
+            </div>
+            <i class="fa fa-gear fa-2x gear-check"></i>
+        </div>
+        <!-- End Tool Box SECTION -->
+
+        <!--START AUTHORS-PAGE-CONTENT SECTION -->
+		<div class="authors-page-content wrapper">
+        	<div class="container">
+		        <div class="authors-page-content-head">
+		          	<h2 class="main-color">Authors</h2>
+		          	<span class="first-line"></span>
+		        </div>
+		        <div class="all-authors">
+		        	<div class="row">
+		        		{%for auteur in auteurs%}
+		        		<div class="col-xs-12 col-sm-6 col-md-4">
+			        		<div class="author-info">
+			        			<a class="auth-img" href="{{ path('author_profile',{'id':auteur.id})}}"><img src="{{ asset('img/auteurs/' ~ auteur.image)  }}" alt="Amber"></a>
+			        			<h3><a class="auth-name" href="{{ path('author_profile',{'id':auteur.id})}}">{{auteur.name}}</a></h3>
+			        		</div>	
+			        	</div>	
+			        	{%endfor%}	
+		        	</div>
+		        </div>
+		       
+		    </div>
+		</div>
+		<!--END AUTHORS-PAGE-CONTENT SECTION -->
+
+
+
+
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}

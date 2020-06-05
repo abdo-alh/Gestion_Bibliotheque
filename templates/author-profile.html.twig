@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Author-profile{% endblock %}
+
+{% block body %}
+
+   <!--START AUTHOR-PROFILE-PAGE-BACKGROUND SECTION -->
+        <div style="background: url(../img/template/auteur.jpg);background-size:cover" class="author-profile-page-background pages-background">
+            <h1>Author</h1>
+        </div>
+        <!--END AUTHOR-PROFILE-PAGE-BACKGROUND SECTION -->
+        <!-- Start Tool Box SECTION -->
+        <div class="option-box">
+            <div class="color-option">
+                <h2>Color Selector</h2>
+                <ul class="list-unstyled">
+                    <li data-value="assets/css/default_theme.css"></li>
+                    <li data-value="assets/css/emerald_theme.css"></li>
+                    <li data-value="assets/css/turquoise_theme.css"></li>
+                    <li data-value="assets/css/sunflower_theme.css"></li>
+                    <li data-value="assets/css/orange_theme.css"></li>
+                    <li data-value="assets/css/carrot_theme.css"></li>
+                    <li data-value="assets/css/alizarin_theme.css"></li>
+                    <li data-value="assets/css/concrete_theme.css"></li>
+                    <li data-value="assets/css/amethyst_theme.css"></li>
+                    <li data-value="assets/css/wetasphalt_theme.css"></li>
+                    <li data-value="assets/css/sienna_theme.css"></li>
+                    <li data-value="assets/css/hotpink_theme.css"></li>
+                    <li data-value="assets/css/darkgoldenrod_theme.css"></li>
+                    <li data-value="assets/css/lightskyblue_theme.css"></li>
+                    <li data-value="assets/css/black_theme.css"></li>
+                </ul>
+            </div>
+            <i class="fa fa-gear fa-2x gear-check"></i>
+        </div>
+        <!-- End Tool Box SECTION -->
+        <!--START AUTHOR-PROFILE-PAGE-CONTENT SECTION -->
+        <div class="author-profile-page-content wrapper">
+            <div class="container">
+                <div class="author-profile-content-head">
+                    <h2 class="main-color">Author's Profile</h2>
+                    <span class="first-line"></span>
+                </div>
+                <!--START AUTHOR-PROFILE-CONTENT-DETAILS -->
+                <div class="author-profile-content-details">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 col-md-3">
+                            <div class="author-pic">
+                                <a href="#">
+                                    <img src="{{ asset('img/auteurs/' ~ auteur.image)  }}" alt="Author Image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-8 col-md-9">
+                            <div class="author-profile-body">
+                                <h3 class="author-name">
+                                    <a href="#">{{auteur.name}}</a>
+                                </h3>
+                                <div class="author-details">
+                                    <p>{{auteur.information}}</p>
+                                    <p>Phone:{{ auteur.phone}}</p>
+                                    <p>Fax: ### ### ####</p>
+                                    <p>Email: <a href="#">{{auteur.email}}</a></p>
+                                    <p>Skype: <a href="#">Reading</a></p>
+                                    <p>My Books: <a href="{{path('filter_pageaut',{'id':auteur.id})}}"> Click here</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--AUTHOR-PROFILE-CONTENT-DETAILS -->
+            </div>
+        </div>
+        <!--END AUTHOR-PROFILE-PAGE-CONTENT SECTION -->
+
+
+
+
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}
