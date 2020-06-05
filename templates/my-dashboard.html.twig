@@ -1,0 +1,107 @@
+
+
+
+
+
+        {% extends 'base.html.twig' %}
+
+{% block title %}My dashboad{% endblock %}
+
+{% block body %}
+      <!--START CUSTOMER-DASHBOARD-PAGE-BACKGROUND SECTION -->
+        <div  style="background: url(../img/template/dashboard.jpg)" class="customer-dashboard-page-background pages-background">
+            <h1>Dashboard</h1>
+        </div>
+        <!--END CUSTOMER-DASHBOARD-PAGE-BACKGROUND SECTION -->
+        <!-- Start Tool Box Section -->
+        <div class="option-box">
+            <div class="color-option">
+                <h2>Color Selector</h2>
+                <ul class="list-unstyled">
+                    <li data-value="assets/css/default_theme.css"></li>
+                    <li data-value="assets/css/emerald_theme.css"></li>
+                    <li data-value="assets/css/turquoise_theme.css"></li>
+                    <li data-value="assets/css/sunflower_theme.css"></li>
+                    <li data-value="assets/css/orange_theme.css"></li>
+                    <li data-value="assets/css/carrot_theme.css"></li>
+                    <li data-value="assets/css/alizarin_theme.css"></li>
+                    <li data-value="assets/css/concrete_theme.css"></li>
+                    <li data-value="assets/css/amethyst_theme.css"></li>
+                    <li data-value="assets/css/wetasphalt_theme.css"></li>
+                    <li data-value="assets/css/sienna_theme.css"></li>
+                    <li data-value="assets/css/hotpink_theme.css"></li>
+                    <li data-value="assets/css/darkgoldenrod_theme.css"></li>
+                    <li data-value="assets/css/lightskyblue_theme.css"></li>
+                    <li data-value="assets/css/black_theme.css"></li>
+                </ul>
+            </div>
+            <i class="fa fa-gear fa-2x gear-check"></i>
+        </div>
+        <!-- End Tool Box Section -->
+        <!--START CUSTOMER-DASHBOARD-PAGE-CONTENT SECTION -->
+        <div class="customer-dashboard-page-content wrapper">
+            <div class="container">
+                <div class="customer-dashboard-page-content-head">
+                    <h2 class="main-color">My Dashboard</h2>
+                    <span class="first-line"></span>
+                </div>
+                <!--START MY-PROFILE PANEL -->
+                <div class="panel-group my-profile">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title post-capitalize">
+                                <a class="" data-toggle="collapse" href="#collapse1"
+                                aria-expanded="true">my profile</a>
+                            </h3>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse in my-profile-items">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <a href="{{path('my_dashboard')}}" class="post-capitalize active">my dashbord</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="{{path('edit_my_profile')}}" class="post-capitalize">edit profile</a>
+                                </li>
+                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--END MY-PROFILE PANEL -->
+                <!--START CUSTOMER-DASHBOARD -->
+                <div class="customer-dashboard">
+                    {%if app.user %}
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 col-md-3">
+                            <div class="customer-pic">
+                                <a href="#">
+                                    <img src="{{ asset('img/users/' ~ app.user.image)  }}" alt="Hannah Paul">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-8 col-md-9">
+                            <div class="profile-body">
+                                                                <h4 class="customer-name">
+                                    <a href="#">{{app.user.username}}</a>
+                                </h4>
+                                <div class="customer-details">
+                                    <p>Email: <a href="#">{{app.user.email}}</a></p>
+                                    <p>Phone: {{app.user.phone}}</p>
+                                    
+                                </div>
+                                <div class="profile-options">
+                                    <a href="{{path('edit_my_profile')}}" class="edit-button post-capitalize">Edit</a> <span>-</span> <a href="{{path('logout')}}" class="sign-out-button post-capitalize">Sign Out</a>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div> {%endif%}
+                </div>
+            </div></div>
+                <!--END CUSTOMER-DASHBOARD -->
+
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}

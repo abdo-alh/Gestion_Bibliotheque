@@ -1,0 +1,231 @@
+
+
+
+
+
+  {% extends 'base.html.twig' %}
+
+{% block title %}Edit my profile{% endblock %}
+
+{% block body %}
+   <!--START CUSTOMER-EDIT-PROFILE-PAGE-BACKGROUND SECTION -->
+        <div style="background:url('../../img/template/profile.jpg');background-size: cover;" class="customer-edit-profile-page-background pages-background">
+            <h1>Edit Profile</h1>
+        </div>
+        <!--END CUSTOMER-EDIT-PROFILE-PAGE-BACKGROUND SECTION -->
+        <!-- Start Tool Box SECTION -->
+        <div class="option-box">
+            <div class="color-option">
+                <h2>Color Selector</h2>
+                <ul class="list-unstyled">
+                    <li data-value="assets/css/default_theme.css"></li>
+                    <li data-value="assets/css/emerald_theme.css"></li>
+                    <li data-value="assets/css/turquoise_theme.css"></li>
+                    <li data-value="assets/css/sunflower_theme.css"></li>
+                    <li data-value="assets/css/orange_theme.css"></li>
+                    <li data-value="assets/css/carrot_theme.css"></li>
+                    <li data-value="assets/css/alizarin_theme.css"></li>
+                    <li data-value="assets/css/concrete_theme.css"></li>
+                    <li data-value="assets/css/amethyst_theme.css"></li>
+                    <li data-value="assets/css/wetasphalt_theme.css"></li>
+                    <li data-value="assets/css/sienna_theme.css"></li>
+                    <li data-value="assets/css/hotpink_theme.css"></li>
+                    <li data-value="assets/css/darkgoldenrod_theme.css"></li>
+                    <li data-value="assets/css/lightskyblue_theme.css"></li>
+                    <li data-value="assets/css/black_theme.css"></li>
+                </ul>
+            </div>
+            <i class="fa fa-gear fa-2x gear-check"></i>
+        </div>
+        <!-- End Tool Box SECTION -->
+        <!--START CUSTOMER-EDIT-PROFILE-PAGE-CONTENT SECTION -->
+        <div class="customer-edit-profile-page-content wrapper">
+            <div class="container">
+                <div class="customer-edit-profile-page-content-head">
+                    <h2 class="main-color">Edit Profile</h2>
+                    <span class="first-line"></span>
+                </div>
+                <!--START MY-PROFILE PANEL -->
+                <div class="panel-group my-profile">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title post-capitalize">
+                                <a class="" data-toggle="collapse" href="#collapse1"
+                                aria-expanded="true">my profile</a>
+                            </h3>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse in my-profile-items">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <a href="{{path('my_dashboard')}}" class="post-capitalize">my dashbord</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="{{path('edit_my_profile')}}" class="post-capitalize  active">edit profile</a>
+                                </li>
+                             
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--END MY-PROFILE PANEL -->
+                <!--START EDIT-PROFILE -->    
+                <div class="user-details edit-profile">
+              <!--      <form>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4 class="have-account">Make changes on your profile.</h4>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group ">
+                                    <h5>First Name :</h5>
+                                    <input type="text" class="form-control input-block" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group ">
+                                    <h5>Last Name :</h5>
+                                    <input type="text" class="form-control input-block" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group ">
+                                    <h5>Company Name :</h5>
+                                    <input type="text" class="form-control input-block" placeholder="Company Name">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group">
+                                    <h5>Email :</h5>
+                                    <input type="text" class="form-control input-block" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group">
+                                    <h5>Phone :</h5>
+                                    <input type="text" class="form-control input-block" placeholder="Phone">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group">
+                                    <h5>Address :</h5>
+                                    <input type="text" class="form-control input-block" placeholder="Street Address">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group">
+                                    <h5>Address Line 2 :</h5>
+                                    <input type="text" class="form-control input-block" placeholder="Apartment, suite, unit etc. (optional)">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group">
+                                    <h5>Town / City :</h5>
+                                    <input type="text" class="form-control input-block" placeholder="Town / City">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group">
+                                    <h5>Country :</h5>
+                                    <select class="form-control input-block">
+                                        <option value="1">Egypt</option>
+                                        <option value="2">Tunisia</option>
+                                        <option value="3">Lebanon</option>
+                                        <option value="4">Morocco</option>
+                                        <option value="5">United Emirates Arab</option>
+                                        <option value="6">Saudi Arabia</option>
+                                        <option value="7">Turkey</option>
+                                        <option value="8">Malaysia</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group">
+                                    <h5>Postcode / Zip :</h5>
+                                    <input type="text" class="form-control input-block" placeholder="Postcode / Zip">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group">
+                                    <h5>Change Password :</h5>
+                                    <input type="password" class="form-control input-block" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group">
+                                    <h5>Repeat Password :</h5>
+                                    <input type="text" class="form-control input-block" placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edit-profile-buttons">
+                            <a href="customer-dashboard.html" class="submit-btn">Submit</a>
+                            <a href="customer-dashboard.html" class="cancel-btn">Cancel</a>
+                        </div>
+                    </form>!-->
+
+                     {{form_start(form)}}
+
+
+            
+
+
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group">
+                                         <div class="error"> {{ form_errors(form.username) }} </div>
+                                       {{form_row(form.username,{'attr':{'placeholder':'Username','class': 'form-control input-block'}})}}
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group">
+                                        {{ form_label(form.email) }}
+                                     <div class="error">{{ form_errors(form.email) }} </div>
+                                     {{ form_widget(form.email,{'attr':{'placeholder':'Email','class': 'form-control input-block'}}) }}
+                                        {#{{form_row(form.email,{'attr':{'placeholder':'Email','class': 'form-control input-block'}})}}#}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group">
+                                         
+                                         {{form_row(form.password,{'attr':{'placeholder':'Password','class': 'form-control input-block'}})}}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group">
+                                        {{ form_label(form.confirm_password) }}
+                                        <div class="error"> {{ form_errors(form.confirm_password) }} </div>
+                                       {{ form_widget(form.confirm_password,{'attr':{'placeholder':'confirm_password','class': 'form-control input-block'}}) }}
+                                    </div>
+                                </div>
+                                <div style="color: #3f444a" class="col-xs-12 col-sm-6 ">
+                                  {{ form_label(form.phone) }}
+                                        <div class="error"> {{ form_errors(form.phone) }} </div>
+                                       {{ form_widget(form.phone,{'attr':{'placeholder':'Phone','class': 'form-control input-block'}}) }}
+                                </div>
+                                <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group">
+                                      {{ form_label(form.image) }}
+                                        <div class="error"> {{ form_errors(form.image) }} </div>
+                                       {{ form_widget(form.image,{'attr':{'placeholder':'Image','class': 'form-control input-block'}}) }}
+                                </div>
+                                 <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group"></div></div>
+                          <div class="col-xs-12 col-sm-6 ">
+                                    <div class="edit-profile-buttons">
+                            
+                           <button type="submit" class="submit-btn"class="submit-btn">Submit</button>
+                            <a href="/my_dashboard" class="cancel-btn">Cancel</a>
+                            
+                        </div>
+                                </div>
+                            </div>
+                      {{form_end(form)}}
+                </div>
+            </div></div></div>
+                <!--END EDIT-PROFILE --> 
+
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}

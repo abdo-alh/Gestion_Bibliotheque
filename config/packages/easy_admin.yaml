@@ -1,0 +1,136 @@
+easy_admin:
+    site_name: 'Gestion de Bibliothéque'
+    design:
+        menu:
+            - { label: 'Homepage', route: 'home',icon: 'home' }
+            - { entity: 'User',label: 'Users', icon: 'users' }
+            - { entity: 'Categorie', label: 'Categories', icon: 'tags' }
+            - { entity: 'Book', label: 'Books', icon: 'book' }
+            - { entity: 'Auteur', label: 'Auteurs', icon: 'pencil' }
+            - { entity: 'Commentaire', label: 'Commentaires', icon: 'comments' }
+            - { entity: 'Message', label: 'Messages', icon: 'envelope' }
+    entities:
+      User:
+        class: App\Entity\User
+        controller: App\Controller\AdminController
+        app_bundle:
+          export_path: '%kernel.project_dir/var/export/user'
+          password_encoding: { algorithm: 'bcrypt', cost: 12 }
+        form:
+          fields:
+            - {property : 'username'}
+            - {property : 'email',type : 'email'}
+            - {property : 'password',type : 'password'}
+            - {property : 'confirm_password',type : 'password'}
+            - {property : 'phone',type : 'tel'}
+            - {property : 'imageFile',type : 'vich_image'}
+            - {property : 'roles' , type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } }}
+
+        list:
+          actions:
+                    - { name: 'activer', css_class: 'btn btn-success', type: 'route' }
+          fields:
+            - {property : 'username'}
+            - {property : 'email'}
+            #- {property : 'password'}
+            - {property : 'phone'}
+            - {property : 'image',type : 'image',base_path: '%app.path.user_images%'}
+            - {property : 'roles'}  
+
+        show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.user_images%' }    
+      
+
+      Categorie:
+        class: App\Entity\Categorie
+        form:
+            fields:
+              - {property : 'name'}
+              - {property : 'imageFile',type: 'vich_image'}
+
+
+        list:
+          fields:
+            - {property : 'name'}
+            - {property : 'image',type : 'image',base_path: '%app.path.categorie_images%'}
+        show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.categorie_images%' }
+
+
+      
+
+      Book:
+        class: App\Entity\Book
+        form:
+            fields:
+              - {property : 'name'}
+              - {property : 'categorie'}
+              - {property : 'auteur'}
+              - {property : 'createdAt',type_options: {'widget': 'single_text', 'attr': {'class': 'datepicker','data-dateformat':'dd/mm/yy H:mm','placeholder':'Select a date' }}}
+              - {property : 'description',type : 'textarea'}
+              - {property : 'imageFile',type: 'vich_image'}
+              - {property : 'pdfFile',type: 'vich_image'}
+
+
+        list:
+          fields:
+            - {property : 'name'}
+            - {property : 'categorie'}
+            - {property : 'auteur'}
+            - {property : 'createdAt',type: 'datetime'}
+            - {property : 'description'}
+            - {property : 'image',type : 'image',base_path: '%app.path.book_images%'}
+            - {property : 'pdf',type : 'file',base_path: '%app.path.book_pdf%'}
+        show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.book_images%' }  
+
+
+     
+
+      Auteur:
+         class: App\Entity\Auteur
+         form:
+            fields:
+              - {property : 'name'}
+              - {property : 'information',type : 'textarea'}
+              - {property : 'phone',type : 'tel'}
+              - {property : 'email', type : 'email'}
+              - {property : 'imageFile',type: 'vich_image'}
+
+         list:
+          fields:
+            - {property : 'name'}
+            - {property : 'information'}
+            - {property : 'phone'}
+            - {property : 'email'}
+            - {property : 'image',type : 'image',base_path: '%app.path.auteur_images%'}
+         show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.auteur_images%' } 
+         
+
+       
+
+      Commentaire:
+        class: App\Entity\Commentaire
+        form:
+            fields:
+              - {property : 'book'}
+              - {property : 'user'}
+              - {property : 'description'}
+              - {property : 'createdAt',type_options: {'widget': 'single_text', 'attr': {'class': 'datepicker','data-dateformat':'dd/mm/yy H:mm','placeholder':'Select a date' }}}
+
+      
+      Message:
+        class: App\Entity\Message
+        form:
+            fields:
+              - {property : 'username'}
+              - {property : 'email'}
+              - {property : 'phone'}
+              - {property : 'message'}        
+       
+      

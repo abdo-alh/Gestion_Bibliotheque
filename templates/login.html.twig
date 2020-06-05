@@ -1,0 +1,66 @@
+{% block body %}
+   <div class="customer-register">
+                    <div class="subheading another-content">
+                        <h3 class="post-capitalize">Don't have an account yet? register now!</h3>
+                        <input value="None" id="diffcont" name="check" type="checkbox" checked>
+                        <label for="diffcont" class="new-checkbox"><span class="true"></span></label>
+                        <span></span>
+                    </div>
+                    <h4 class="have-account">Join us and enjoy reading and buying books online.
+                    </h4>
+                    <div class="user-details another-form">
+                       {{form_start(form)}}
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group">
+                                        <h5>Username :</h5>
+                                       {{form_row(form.username,{'label':false,'attr':{'placeholder':'Username','class': 'form-control input-block'}})}}
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group">
+                                        <h5>Email :</h5>
+                                        {{form_row(form.email,{'label':false,'attr':{'placeholder':'Email','class': 'form-control input-block'}})}}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group">
+                                        <h5>Password :</h5>
+                                         {{form_row(form.password,{'label':false,'attr':{'placeholder':'Password','class': 'form-control input-block'}})}}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group">
+                                        <h5>Confirm password :</h5>
+                                        {{form_row(form.confirm_password,{'label':false,'attr':{'placeholder':'confirm_password','class': 'form-control input-block'}})}}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group">
+                                        <h5>Phone :</h5>
+                                        {{form_row(form.phone,{'label':false,'attr':{'placeholder':'Phone','class': 'form-control input-block'}})}}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group">
+                                        <h5>Image :</h5>
+                                        {{form_row(form.image,{'label':false,'attr':{'placeholder':'Image','class': 'form-control input-block'}})}}
+                                    </div>
+                                </div>
+                                 <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group"></div></div>
+                          <div class="col-xs-12 col-sm-6 ">
+                                    <div class="form-group">
+                                <button type="submit" class="submit-btn"class="submit-btn">Submit</button>
+                                  </div>
+                                </div>
+                            </div>
+                      {{form_end(form)}}
+                    </div>
+                </div>
+                <!--END CUSTOMER-REGISTER -->
+            </div>    
+        </div>
+
+        {% endblock %}

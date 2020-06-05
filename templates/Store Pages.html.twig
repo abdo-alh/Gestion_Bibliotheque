@@ -1,0 +1,96 @@
+
+
+
+
+
+        {% extends 'base.html.twig' %}
+
+{% block title %}Store Pages{% endblock %}
+
+{% block body %}
+     <!--START STORE-PAGES-PAGE-BACKGROUND SECTION-->
+        <div style="background:url('../img/template/mypages.jpg');background-size: cover" class="store-pages-page-background pages-background">
+            <h1>Store Pages</h1>
+        </div>
+        <!--END STORE-PAGES-PAGE-BACKGROUND SECTION-->
+    <!-- Start Tool Box SECTION -->
+        <div class="option-box">
+            <div class="color-option">
+                <h2>Color Selector</h2>
+                <ul class="list-unstyled">
+                                   <li data-value="{{ asset('assets/css/default_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/emerald_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/turquoise_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/sunflower_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/orange_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/carrot_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/alizarin_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/concrete_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/amethyst_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/wetasphalt_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/sienna_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/hotpink_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/darkgoldenrod_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/lightskyblue_theme.css')}}"></li>
+                    <li data-value="{{ asset('assets/css/black_theme.css')}}"></li>
+                </ul>
+            </div>
+            <i class="fa fa-gear fa-2x gear-check"></i>
+        </div>
+        <!-- End Tool Box SECTION -->
+        <!--START STORE-PAGES-PAGE-CONTENT SECTION -->
+        <div class="store-pages-page-content wrapper">
+            <div class="container">
+                <div class="store-pages-page-content-head">
+                    <h2 class="main-color">Store's All Pages</h2>
+                    <span class="first-line"></span>
+                </div>
+                <!-- Start Site Map Panel -->
+                <div id="accordion" class="panel-group" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading heading-four">
+                            <h3 class="panel-title">
+                                <a class="" data-toggle="collapse" data-parent="#accordion" href="#collapse-one" aria-expanded="true"><i class="fa fa-address-card-o" aria-hidden="true"></i>  Site Map</a>
+                            </h3>
+                        </div>
+                        <div id="collapse-one" class="panel-collapse collapse in" aria-labelledby="heading-four">
+                            <div class="panel-body store-pages-sections">
+                                <h4>Main Pages :</h4>
+                                <ul class="careers-title">
+                                    <li><a href="{{path('home')}}">Home</a></li>
+                                    <li><a href="{{path('about')}}">About</a></li>
+                                    <li><a href="{{path('contactus')}}">Contact</a></li>
+                                </ul>
+                                <h4>Authors & Books :</h4>
+                                <ul class="careers-title">
+                                    <li><a>Author Profile</a></li>
+                                    <li><a href="{{path('authors')}}">All Authors</a></li>
+                                 
+                                    <li><a href="{{path('categories')}}">Categories</a></li>
+                                    <li><a>Your Book</a></li>
+                                    <li><a href="{{path('books')}}">Our Books</a></li>
+                                </ul>
+                              
+                                <h4>Customer :</h4>
+                                <ul class="careers-title">
+                                    <li><a href="{{path('security_login')}}">Login</a></li>
+                                    <li><a href="{{path('inscription')}}">Register</a></li>
+                                </ul>
+                                
+                                <h4>Store All Pages :</h4>
+                                <ul class="careers-title">
+                                    <li><a href="{{path('store_pages')}}">Store Pages</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Site Map Panel -->
+            </div>
+        </div>        
+        <!--END STORE-PAGES-PAGE-CONTENT SECTION -->
+
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}

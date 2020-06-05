@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}!{% endblock %}</title>
+        {% block stylesheets %}<link rel='stylesheet' href="{{ asset('assets/css/bootstrap.css')}}">
+        <link rel='stylesheet' href="{{ asset('assets/css/normalize.css')}}"/>
+        <link rel='stylesheet' href="{{ asset('assets/css/style.css')}}"/>
+        <link rel='stylesheet' href="{{ asset('assets/css/default_theme.css')}}"/>
+        <!-- Fonts Library -->
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,800'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Libre+Franklin:100,200,300,500&subset=latin,latin-ext'>
+        <!-- Font Awesome Iconc Library -->
+        <link rel='stylesheet' href="{{ asset('assets/css/font-awesome.min.css')}}"/>
+		<link rel='stylesheet' href="{{ asset('assets/fontawesome/css/all.css')}}"/>
+		
+       <!--  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">-->
+ <script src="{{ asset('assets/js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery.nicescroll.min.js')}}"></script>
+ 	<script src="{{ asset('assets/js/plugins.js')}}"></script>
+	<script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+       <style type="text/css"> 
+	    .form-group
+    {
+        color:#3f444a;
+    }
+    .error
+    {
+    	color:red;
+    }
+    
+
+    </style>
+        {% endblock %}
+    </head>
+    <body>
+    			<!--START MENU SECTION-->
+		<div class="menu">
+			<div class="container">
+				<div class="menu-section">
+					<div class="navbar-header">
+					    <a class="navbar-brand" href="{{ path('home')}}">Reading</a>
+					</div>
+					<!--START SEARCH BAR -->
+					<div class="search-bar">
+					  	<input type="text" placeholder="Search"/>
+					</div>
+					<div style="right:50px; " class="search">
+						<div class="search-open"><i class="fa fa-search" aria-hidden="true"></i></div>
+						<div class="search-exit"><i class="fa fa-times" aria-hidden="true"></i></div>	 
+					</div>
+					<!--END SEARCH BAR -->
+		
+				    <!--START MENU TOGGLE ICON-->
+				    <div class="menu-toggle">
+					    <div class="one"></div>
+					    <div class="two"></div>
+					    <div class="three"></div>
+				  	</div>
+				    <nav>
+						<ul class="hidden">
+                            <li><a href="{{ path('home')}}">Home</a></li>
+                            <li><a href="{{ path('categories')}}">Categories</a></li>
+                            <li><a href="{{ path('books')}}">Our Books</a></li>
+                           <li><a href="{{ path('authors')}}">Authors</a></li>
+                             <!-- <li><a href="{{ path('store_pages')}}">Store's All Pages</a></li>-->
+                             {% if is_granted('ROLE_ADMIN') %}
+                              <li><a href="/admin">Gestion des Books</a></li>
+                              {%else%}
+                              {%endif%}
+                               {% if is_granted('ROLE_USER') %}
+                              <li><a href="{{path('my_dashboard')}}">My Dashboard</a></li>
+                              {%else%}
+                              {%endif%}
+                           {%if not app.user %}
+                            <li><a href="{{ path('security_login')}}">Sign In</a></li>
+                            {%else%}
+                             <li><a href="{{ path('logout')}}">Logout</a></li>
+
+                             {%endif%}
+                         
+                        </ul>
+					</nav>
+					<!--END MENU TOGGLE ICON-->
+				</div>
+			</div>
+		</div>
+		<!--END MENU SECTION-->
+        {% block body %}{% endblock %}
+
+           <!--START FOOTER SECTION -->
+        <div class="footer wrapper">
+        	<div class="container">
+        		<div class="footer-parts">
+        			<div class="section-head">
+						<h2 class="second-color">Site Map</h2>
+						<span class="second-line"></span>
+					</div>
+		        	<div class="row site-map">
+			        	<div class="col-xs-12 col-sm-6 col-md-4">
+			        		<a href="{{ path('home')}}">Home</a>
+			        	</div>
+			        	<div class="col-xs-12 col-sm-6 col-md-4">
+			        		<a href="{{ path('about')}}">About</a>
+			        	</div>
+			        	<div class="col-xs-12 col-sm-6 col-md-4">
+			        		<a href="{{path('security_login')}}">Login</a>
+			        	</div>
+			        	<div class="col-xs-12 col-sm-6 col-md-4">
+			       			<a href="{{ path('categories')}}">Categories</a>
+			        	</div>
+			        	<div class="col-xs-12 col-sm-6 col-md-4">
+			        		<a href="{{path('authors')}}">Authors</a>
+			        	</div>
+			        	<div class="col-xs-12 col-sm-6 col-md-4">
+			        		<a href="{{path('inscription')}}">Register</a>
+			        	</div>
+			        	<div class="col-xs-12 col-sm-6 col-md-4">
+			        		<a href="{{path('books')}}">Books</a>
+			        	</div>
+			        	<div class="col-xs-12 col-sm-6 col-md-4">
+			        		<a href="{{ path('contactus')}}">Contact Us</a>
+			        	</div>
+			        	<div class="col-xs-12 col-sm-6 col-md-4">
+			        		<a href="{{path('store_pages')}}">Store Pages</a>
+			        	</div>
+		        	</div>
+			        <div class="social-media">
+			        	<a class="facebook" href="#"><i class="fab fa-facebook-f  fa-2x" aria-hidden="true"></i></a>
+			        	<a class="twitter" href="#"><i class="fab fa-twitter fa-2x" aria-hidden="true"></i></a>
+			        	<a class="youtube" href="#"><i class="fab fa-youtube fa-2x" aria-hidden="true"></i></a>
+			        	<a class="googleplus" href="#"><i class="fab fa-google-plus-g fa-2x" aria-hidden="true"></i></a>
+			        	<a class="linkedin" href="#"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i></a>
+			        	<a class="instagram" href="#"><i class="fab fa-instagram fa-2x" aria-hidden="true"></i></a>
+			        	<a class="pinterest" href="#"><i class="fab fa-pinterest-p fa-2x" aria-hidden="true"></i></a> 	
+					</div>
+        		</div>
+        	</div>
+        </div>
+        <!--END FOOTER SECTION -->
+        <!--START FINAL SECTION -->
+        <div class="final">
+        	<div class="container">
+        		<div class="row">
+        			<div class="col-xs-12 col-sm-6">
+			        	<div class="copyright final-left">
+			        		Copyright &copy; 2018 <span>Reading</span>.Inc
+			        	</div>
+		        	</div>
+		        	<div class="col-xs-12 col-sm-6">
+				        <div class="copyright final-right">
+				        	Designed by: <span><a href="#">DAWM_Theam</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--END FINAL SECTION -->
+
+<!-- Start Scroll To Top -->
+        <div id="scroll-top">
+            <i class="fa fa-chevron-up fa-2x"></i>
+        </div>
+        <!-- End Scroll To Top -->
+        {% block javascripts %}
+         
+        {% endblock %}
+    </body>
+</html>
